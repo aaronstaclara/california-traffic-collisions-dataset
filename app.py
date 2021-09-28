@@ -1,10 +1,9 @@
 import json
-from urllib.request import urlopen
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+from urllib.request import urlopen
 
 
 @st.cache
@@ -164,23 +163,76 @@ def predictive_analytics():
         "This section aims to provide a model to predict the number of injurious collisions."
     )
 
-    # Outline steps (use ppt here)
+    # Outline steps
+    st.write("Using the California Traffic Collisions Data, a model was built using the following methodology: ")
+    st.image("Slide1.PNG")
 
-    # Show step-by-step of modelling and results
+    # Outline features
+    st.write("The following features were used in the modelling: ")
+    st.image("Slide2.PNG")
+
+    # Outline model
+    st.write("The model works as follows. Models used were Linear Regression and Gradient Boosting Regressor: ")
+    st.image("Slide3.PNG")
+
+    # Outline results
+    st.write("The results of the following are as follows: ")
+    st.image("Slide4.PNG")
+
+    # Outline feature importance
+    st.write("In the modelling, party_count, type_of_collision_sideswipe and distance were found to significantly affect the prediction: ")
+    st.image("Slide5.PNG")
 
 
 def conclusion():
     # Write the title and the subheader
     st.title("🚗 Conclusions and Recommendations")
 
-    # Outline conclusions and recommendations (use ppt here)
+    # Outline conclusions and recommendations
+    st.subheader("What We Found")
+    st.markdown(
+        """
+        In exploring the data, we have found that: 
+        
+        1. Los Angeles registers the most number of fatal collisions from 2001 to 2021.
+        2. In terms of day of week, most fatal collisions usually occur during Saturdays.
+        3. In terms of hour, most fatal collisions usually occur at 6 PM. 
+        """
+    )
 
+    # Outline conclusions and recommendations
+    st.subheader("What We Can Do")
+    st.markdown(
+        """
+        California should monitor closely the insights extracted fromt their data. 
+        Stringent traffic measures must be implemented along Los Angeles and patrol groups should be able
+        to monitor roads during the evenings and the weekends. 
+        
+        To further improve the modelling, we can consider other variables that could potentially affect 
+        the severity of collisions. This will also help us in simulating environments that could be harmful to
+        motorists. These simulations, in effect, can inform the decisions of policymakers and patrol groups 
+        in creating an environment that is safe for motorists. 
+        """
+    )
+
+def author():
+    # Detail info about the author
+    st.title("🚗 Author")
+
+    st.markdown(
+        """
+        This web app was created by **Rick Aaron Sta.Clara**. He is a data scientist with a degree in chemical engineering.
+        He is currently improving his capacities in understanding data and algorithms. Visit his profile here: 
+        linkedin.com/in/rick-aaron-sta-clara-7470b1114.
+        """
+    )
 
 list_of_pages = [
     "The Data",
     "Analyzing Fatal Collisions",
     "Predicting Injured Victims",
-    "Conclusions and Recommendations"
+    "Conclusions and Recommendations",
+    "Author"
 ]
 
 st.sidebar.title(':scroll: Main Pages')
@@ -197,3 +249,6 @@ elif selection == "Predicting Injured Victims":
 
 elif selection == "Conclusions and Recommendations":
     conclusion()
+
+elif selection == "Author":
+    author()
