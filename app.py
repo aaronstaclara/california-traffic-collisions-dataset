@@ -133,7 +133,7 @@ def descriptive_analytics():
     # Write the title and the subheader
     st.title("🚗 Analyzing Fatal Collisions")
     st.subheader(
-        "This section aims to provide insights regarding the geographical and temporal aspect of fatal collisions."
+        "This section aims to provide insights regarding the geographical and temporal aspect of fatal collisions in California."
     )
 
     # Generate year_options
@@ -164,8 +164,11 @@ def predictive_analytics():
     )
 
     # Outline steps
-    st.write("Using the California Traffic Collisions Data, a model was built using the following methodology: ")
+    st.write(
+        "Using the California Traffic Collisions Data, a model was built using the following methodology. "
+    )
     st.image("Slide1.PNG")
+    st.caption("Access the files at https://github.com/aaronstaclara/california-traffic-collisions-dataset.")
 
     # Outline features
     st.write("The following features were used in the modelling: ")
@@ -176,7 +179,7 @@ def predictive_analytics():
     st.image("Slide3.PNG")
 
     # Outline results
-    st.write("The results of the following are as follows: ")
+    st.write("The results of the modelling are as follows: ")
     st.image("Slide4.PNG")
 
     # Outline feature importance
